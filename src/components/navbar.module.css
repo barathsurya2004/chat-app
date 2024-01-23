@@ -1,0 +1,38 @@
+.navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #011f4b;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+}
+
+.navList li {
+    margin-right: 20px;
+}
+
+.navList a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navList a:hover {
+    border-bottom: 2px solid #b3cde0;
+}
