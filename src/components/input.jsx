@@ -2,8 +2,19 @@ import { useContext, useState } from 'react';
 import styles from './input.module.css';
 import { MessageContext } from '../contexts/messageContext';
 import { userContext } from '../contexts/userContext';
-
+import { io } from 'socket.io-client';
+import { useEffect } from 'react';
+const socket = io.connect('http://localhost:3005');
 const MessageInput = ({ userId }) => {
+    useEffect(() => {
+        socket.on('connection', (socket) => {
+            console.log('connected to chat app' + socket.id);
+        })
+        socket.on('recieve_message', (data) => {
+            console.log(data);
+            setMessages(data);
+        })
+    }, [socket]);
     const uid = () => {
         return Date.now().toString(36) + Math.random().toString(36).substr(2);
     }
@@ -20,7 +31,8 @@ const MessageInput = ({ userId }) => {
             content: text,
             timestamp: time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
         }
-        setMessages([...messages, mess])
+        socket.emit('message_sent', mess);
+        setMessages([...messages, mess]);
         setText('')
         console.log(mess);
     }
