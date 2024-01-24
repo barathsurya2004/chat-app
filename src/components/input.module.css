@@ -1,16 +1,19 @@
 /* MessageInput.module.css */
 .messageInputContainer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #f4f4f4;
+    background-color: #36393f;
+    /* Discord dark theme background color */
     border-radius: 20px;
     padding: 10px;
     margin: 10px;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
+    /* Discord-like shadow effect */
 }
 
 .inputField {
@@ -19,10 +22,14 @@
     border: none;
     border-radius: 10px;
     outline: none;
+    background-color: #40444b;
+    /* Discord-like text input background color */
+    color: white;
 }
 
 .submitButton {
-    background-color: #4caf50;
+    background-color: #7289da;
+    /* Discord brand color */
     color: white;
     border: none;
     border-radius: 10px;

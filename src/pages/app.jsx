@@ -2,9 +2,8 @@ import { useContext, useEffect } from "react";
 import ChatWindow from "../components/chat-window"
 import { userContext } from "../contexts/userContext";
 import { useNavigate } from "react-router-dom";
-import { io } from 'socket.io-client';
+import UserSelect from "../components/usersSelect";
 const APP = () => {
-    const socket = io.connect('http://localhost:3001')
     const { user } = useContext(userContext);
     const router = useNavigate();
     useEffect(() => {
@@ -14,7 +13,10 @@ const APP = () => {
     }, [user]);
     if (user) {
         return (
-            <ChatWindow currentUserId={user.uid} />
+            <div className="container">
+                <UserSelect />
+                <ChatWindow currentUserId={user.uid} />
+            </div>
         )
     }
     return (

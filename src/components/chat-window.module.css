@@ -1,11 +1,14 @@
 /* ChatWindow.module.css */
 .chatWindow {
+    position: relative;
     flex: 1;
     overflow-y: auto;
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: #36393f;
+    /* Discord dark theme background color */
     height: 100vh;
     padding: 66px 50px;
+    color: white;
 }
 
 .messageList {
@@ -25,17 +28,19 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 60%;
+    background-color: #7289da;
+    /* Discord brand color */
+    color: white;
 }
 
 .sentByCurrentUser {
     align-self: flex-end;
-    background-color: #4caf50;
-    color: white;
 }
 
 .sentByOtherUser {
     align-self: flex-start;
-    background-color: #ffffff;
+    background-color: #40444b;
+    /* Discord message background color for other users */
 }
 
 .sender {
@@ -56,4 +61,16 @@
 /* Add any additional styling as needed */
 .sentByCurrentUser .timestamp {
     color: white;
+}
+
+@media (max-width:700px) {
+    .message {
+        width: 90%;
+    }
+}
+
+@media (min-width:1000px) {
+    .message {
+        width: 600px;
+    }
 }

@@ -3,16 +3,21 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: #011f4b;
+    background-color: #36393f;
+    /* Discord dark theme background color */
     color: white;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    /* Discord shadow effect */
+    z-index: 10;
 }
 
 .logo a {
-    color: white;
+    color: #7289da;
+    /* Discord brand color */
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
@@ -21,6 +26,8 @@
 .navList {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .navList li {
@@ -28,11 +35,13 @@
 }
 
 .navList a {
-    color: white;
+    color: #7289da;
+    /* Discord brand color */
     text-decoration: none;
     font-weight: bold;
 }
 
 .navList a:hover {
-    border-bottom: 2px solid #b3cde0;
+    border-bottom: 2px solid #7289da;
+    /* Discord brand color */
 }
