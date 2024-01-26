@@ -5,10 +5,13 @@ import { userContext } from '../contexts/userContext';
 import { io } from 'socket.io-client';
 import { useEffect } from 'react';
 const socket = io.connect('http://localhost:3005');
-const MessageInput = ({ userId }) => {
+const MessageInput = ({ userid }) => {
     useEffect(() => {
         socket.on('connection', (socket) => {
             console.log('connected to chat app' + socket.id);
+        })
+        socket.on('connected_data', (data) => {
+            setMessages(data);
         })
         socket.on('recieve_message', (data) => {
             console.log(data);
@@ -26,8 +29,8 @@ const MessageInput = ({ userId }) => {
         const time = new Date();
         const mess = {
             id: uid(),
-            userId: userId,
-            senderId: user.displayName,
+            userid: userid,
+            senderid: user.displayName,
             content: text,
             timestamp: time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
         }

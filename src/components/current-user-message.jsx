@@ -6,7 +6,7 @@ const CurrentUserMessage = ({ message }) => (
         <span>
 
             <span className={styles.content}>{message.content}</span>
-            : <span className={styles.sender}>{message.senderId}</span>
+            : <span className={styles.sender}>{message.senderid}</span>
         </span>
     </li>
 );

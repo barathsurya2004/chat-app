@@ -16,14 +16,14 @@ const ChatWindow = ({ currentUserId }) => {
         <div className={styles.chatWindow}>
             <ul className={styles.messageList}>
                 {messages.map((message) => (
-                    message.userId === currentUserId ? (
+                    message.userid === currentUserId ? (
                         <CurrentUserMessage key={message.id} message={message} />
                     ) : (
                         <OtherUserMessage key={message.id} message={message} />
                     )
                 ))}
             </ul>
-            <MessageInput userId={currentUserId} />
+            <MessageInput userid={currentUserId} />
         </div>
     );
 };
