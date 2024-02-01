@@ -25,12 +25,15 @@ const MessageInput = ({ userid }) => {
     const { user } = useContext(userContext);
     const [text, setText] = useState('')
     console.log(text)
+    const { userDetail } = useContext(userContext);
+    console.log(userDetail);
     const sendHandler = () => {
+        console.log(userDetail);
         const time = new Date();
         const mess = {
             id: uid(),
-            userid: userid,
-            senderid: user.displayName,
+            uid: userid,
+            displayname: userDetail[0].displayname,
             content: text,
             timestamp: time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
         }

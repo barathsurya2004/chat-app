@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { createUserRefWithAuth, createUserRefWithAuthGoogle, signInWithGoogle, signupEmailPassword } from '../utils/firebase';
 import { userContext } from '../contexts/userContext';
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 const SignupPage = () => {
     const { user, setUser } = useContext(userContext);
     const router = useNavigate();
@@ -34,19 +34,32 @@ const SignupPage = () => {
             email: formData.email,
             password: formData.password
         });
-        const displayName = formData.firstName + ' ' + formData.lastName;
-        const docref = createUserRefWithAuth(user, displayName);
+        const data = {
+            uid: user.uid,
+            formData
+        }
+        const serverResp = await axios.post('http://localhost:3005/signupemailpass', data, {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        });
+        console.log(serverResp.data);
 
 
     };
 
     const googleSignupHandler = async () => {
         const resp = await signInWithGoogle();
-        setUser(resp.user);
         console.log(resp.user);
-        const docref = await createUserRefWithAuthGoogle(resp.user);
+        const serverResp = await axios.post('http://localhost:3005/googleusersignup', resp.user, {
+            headers: {
+                "Content-Type": 'application/x-www-form-urlencoded'
+            }
+        });
+        console.log(serverResp.data);
+        // console.log(serverResp);
+        // console.log(resp.user);
     }
-
     return (
         <div className={styles.container}>
             <form className={styles.form} onSubmit={handleSubmit}>

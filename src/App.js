@@ -5,10 +5,8 @@ import SignInPage from './pages/signIn';
 import SignupPage from './pages/signup';
 import Home from './pages/homePage';
 import APP from './pages/app';
-import { useContext } from 'react';
-import { userContext } from './contexts/userContext';
 function App() {
-  const { user } = useContext(userContext);
+
   return (
 
     <Routes>

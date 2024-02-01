@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { createUserRefWithAuthGoogle, getUserRefWithAuth, signInWithGoogle, signinEmailPassword } from '../utils/firebase';
 import { userContext } from '../contexts/userContext';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 const SignInPage = () => {
@@ -41,6 +42,12 @@ const SignInPage = () => {
         setUser(resp.user);
         const docref = await createUserRefWithAuthGoogle(resp.user);
         console.log(resp.user);
+        const serverResp = await axios.post('http://localhost:3005/googleusersignup', resp.user, {
+            headers: {
+                "Content-Type": 'application/x-www-form-urlencoded'
+            }
+        });
+        console.log(serverResp.data);
     }
 
 

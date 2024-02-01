@@ -11,6 +11,8 @@
     color: white;
 }
 
+
+
 .messageList {
     display: flex;
     flex-direction: column;
