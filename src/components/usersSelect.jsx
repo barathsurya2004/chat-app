@@ -4,22 +4,22 @@ import styles from './userSelect.module.css';
 const UserSelect = () => {
     const dummyUser = [{
         userId: 'a;sdligfhaow',
-        senderId: 'Barath surya',
+        senderId: 'room0 (under Dev)',
         imageUrl: 'https://picsum.photos/64/64'
     },
     {
         userId: 'a;sdasdfligfhaow',
-        senderId: 'Barath surya',
+        senderId: 'room1',
         imageUrl: 'https://picsum.photos/64/64'
     },
     {
         userId: 'a;sdlidsaasdfgfhaow',
-        senderId: 'Barath1 surya',
+        senderId: 'room2',
         imageUrl: 'https://picsum.photos/64/64'
     },
     {
         userId: 'a;sdliasdfsawgfhaow',
-        senderId: 'Barath surya1',
+        senderId: 'room3',
         imageUrl: 'https://picsum.photos/64/64'
     }]
     return (

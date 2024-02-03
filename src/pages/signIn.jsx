@@ -52,38 +52,54 @@ const SignInPage = () => {
 
 
     return (
-        <div className={styles.container}>
-            <form className={styles.form} onSubmit={handleSubmit}>
-                <h2>Sign In</h2>
-                <div className={styles.formGroup}>
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <button type="submit">Sign In</button>
-                <div className={styles.googleSignInButton} onClick={googleSignupHandler}>
-                    <FcGoogle />
-                    <span>Sign Up with Google</span>
-                </div>
-            </form>
-        </div>
+        <>
+            <div style={{
+                position: "fixed",
+                zIndex: "-100"
+            }}>
+                <img src="/background.png" alt="" />
+            </div>
+            <div className={styles.container}>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <h2>Sign In</h2>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <button type="submit">Sign In</button>
+                    <div className={styles.googleSignInButton} onClick={googleSignupHandler}>
+                        <div style={{
+                            backgroundColor: "white",
+                            height: "100%"
+                            , padding: "5px"
+                        }}>
+                            <FcGoogle />
+                        </div>
+                        <div className={styles.span}>
+                            <span>Sign Up with Google</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </>
     );
 };
 

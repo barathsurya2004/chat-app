@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #36393f; */
+}
+
+.linkContainer {
+    background-color: #36393f47;
+    backdrop-filter: blur(5px);
+    padding: 50px 40px;
+    border-radius: 25px;
+
+}
+
+.linkContainer h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.linkContainer a {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #7289da;
+    color: white;
+    padding: 10px 5px;
+    border-radius: 15px;
+    text-decoration: none;
+
+}

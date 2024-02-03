@@ -1,48 +1,22 @@
 import { Link } from "react-router-dom";
-
+import classes from './homePage.module.css';
 
 const Home = () => {
     return (<div>
         <div style={{
-            display: "flex"
-            , flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            width: '100%'
+            position: "fixed",
+            zIndex: "-100"
         }}>
-
-            <h1 style={{
-            }}>
-                NeEXT Chat
-            </h1>
-            <button style={{
-                width: '200px'
-            }}>
-                <Link to={'/sign-in'}>
-                    go to chat room
-                </Link>
-            </button>
+            <img src="/background.png" alt="" />
         </div>
 
-        <div style={{
-            display: "flex"
-            , flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            width: '100%'
-        }}>
-
-            <h1 style={{
-            }}>
-                don't have an accout ?
-            </h1>
-            <button style={{
-                width: '200px'
-            }}>
-                <Link to={'/sign-up'}>
-                    Sign up
-                </Link>
-            </button>
+        <div className={classes.container}>
+            <div className={classes.linkContainer}>
+                <h1>Have an account ?</h1>
+                <Link to={'/sign-in'}>Sign In</Link>
+                <h1>Don't have one ?</h1>
+                <Link to={"/sign-up"} >Sign Up</Link>
+            </div>
         </div>
 
     </div>)

@@ -9,15 +9,15 @@
 .form {
     width: 300px;
     padding: 20px;
-    border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .form h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: white;
 }
 
 .formGroup {
@@ -25,6 +25,7 @@
 }
 
 .container label {
+    color: white;
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
@@ -40,7 +41,7 @@
 .container button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #558aed;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -48,7 +49,7 @@
 }
 
 .container button:hover {
-    background-color: #0056b3;
+    background-color: #4067b0;
 }
 
 .googleSignInButton {
@@ -57,7 +58,19 @@
     justify-content: space-around;
     margin-top: 20px;
     cursor: pointer;
+    color: white;
+    background-color: #558aed;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: #4067b0;
+    }
 }
+
+.span {
+    padding: 10px;
+}
+
 
 
 
